@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite it as below."
+title: "When is the cleanest, and the cheapest, time to use electricity? Carbon intensity, prices and load shifting on the GB grid, 2019–2025"
+type: software
+authors:
+  - family-names: Xu
+    given-names: Mingyuan
+    affiliation: University College London
+version: 0.3.0
+date-released: 2026-11-24
+license: MIT
+repository-code: "https://github.com/richard663-ui/gb-grid-carbon-timing"
+keywords:
+  - carbon intensity
+  - electricity prices
+  - demand flexibility
+  - dynamic tariffs
+  - electric vehicles
+  - marginal emissions
+  - Great Britain
+preferred-citation:
+  type: report
+  title: "When is the cleanest, and the cheapest, time to use electricity? Carbon intensity, prices and load shifting on the GB grid, 2019–2025"
+  authors:
+    - family-names: Xu
+      given-names: Mingyuan
+      affiliation: University College London
+  year: 2026
+  month: 11
+  notes: "Working paper, draft v0.3"
+  url: "https://github.com/richard663-ui/gb-grid-carbon-timing"

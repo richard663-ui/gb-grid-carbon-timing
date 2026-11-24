@@ -1,0 +1,23 @@
+{
+  "title": "When is the cleanest, and the cheapest, time to use electricity? Carbon intensity, prices and load shifting on the GB grid, 2019–2025 (code, results and working paper)",
+  "upload_type": "software",
+  "description": "<p>Code, processed results and working paper (draft v0.3) for a study of when electricity use in Great Britain is cleanest and cheapest, 2019–2025.</p><p>Using public half-hourly data (NESO Carbon Intensity API; Elexon FUELHH generation and MID wholesale prices; Octopus Agile household prices), the study measures how the daily shape of carbon intensity and prices has changed, simulates flexible demand under fixed, forecast-based and price-based schedules (testing fixed rules out of sample), compares carbon and cost savings on the same days, and estimates the implied abatement cost of carbon-aware over cheapest scheduling. Marginal emission factors are estimated as a robustness check.</p><p>The analysis can be reproduced with four commands; see README.md.</p>",
+  "creators": [
+    {
+      "name": "Xu, Mingyuan",
+      "affiliation": "University College London"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "carbon intensity",
+    "electricity prices",
+    "demand flexibility",
+    "dynamic tariffs",
+    "electric vehicles",
+    "marginal emissions",
+    "Great Britain"
+  ]
+}
