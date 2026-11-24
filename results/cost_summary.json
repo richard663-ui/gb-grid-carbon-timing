@@ -1,0 +1,721 @@
+{
+ "price_trends": [
+  {
+   "year": 2019,
+   "mid_mean_gbp_mwh": 41.77,
+   "mid_median_gbp_mwh": 41.03,
+   "mid_daily_spread_median": 29.8,
+   "mid_spread_rel_pct": 71.36,
+   "mid_negative_pct": 0.35,
+   "mid_cheapest_hour": 3,
+   "mid_dearest_hour": 18,
+   "mid_coverage_pct": 97.98,
+   "agile_mean_p_kwh": 10.64,
+   "agile_median_p_kwh": 8.9,
+   "agile_daily_spread_median": 19.03,
+   "agile_spread_rel_pct": 178.84,
+   "agile_negative_pct": 0.1,
+   "agile_cheapest_hour": 4,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 1.14,
+   "mid_midday_night_ratio": 1.22,
+   "agile_midday_night_ratio": 1.25
+  },
+  {
+   "year": 2020,
+   "mid_mean_gbp_mwh": 33.54,
+   "mid_median_gbp_mwh": 32.6,
+   "mid_daily_spread_median": 32.56,
+   "mid_spread_rel_pct": 97.07,
+   "mid_negative_pct": 1.99,
+   "mid_cheapest_hour": 4,
+   "mid_dearest_hour": 18,
+   "mid_coverage_pct": 93.93,
+   "agile_mean_p_kwh": 8.97,
+   "agile_median_p_kwh": 7.35,
+   "agile_daily_spread_median": 19.55,
+   "agile_spread_rel_pct": 217.95,
+   "agile_negative_pct": 1.25,
+   "agile_cheapest_hour": 3,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 1.13,
+   "mid_midday_night_ratio": 1.39,
+   "agile_midday_night_ratio": 1.44
+  },
+  {
+   "year": 2021,
+   "mid_mean_gbp_mwh": 115.06,
+   "mid_median_gbp_mwh": 90.56,
+   "mid_daily_spread_median": 67.63,
+   "mid_spread_rel_pct": 58.78,
+   "mid_negative_pct": 0.39,
+   "mid_cheapest_hour": 3,
+   "mid_dearest_hour": 17,
+   "mid_coverage_pct": 95.73,
+   "agile_mean_p_kwh": 22.1,
+   "agile_median_p_kwh": 20.08,
+   "agile_daily_spread_median": 19.46,
+   "agile_spread_rel_pct": 88.06,
+   "agile_negative_pct": 0.01,
+   "agile_cheapest_hour": 4,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 1.14,
+   "mid_midday_night_ratio": 1.32,
+   "agile_midday_night_ratio": 1.22
+  },
+  {
+   "year": 2022,
+   "mid_mean_gbp_mwh": 198.19,
+   "mid_median_gbp_mwh": 179.69,
+   "mid_daily_spread_median": 144.02,
+   "mid_spread_rel_pct": 72.67,
+   "mid_negative_pct": 0.75,
+   "mid_cheapest_hour": 3,
+   "mid_dearest_hour": 18,
+   "mid_coverage_pct": 99.86,
+   "agile_mean_p_kwh": 35.77,
+   "agile_median_p_kwh": 35.0,
+   "agile_daily_spread_median": 15.45,
+   "agile_spread_rel_pct": 43.19,
+   "agile_negative_pct": 0.4,
+   "agile_cheapest_hour": 3,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 1.02,
+   "mid_midday_night_ratio": 1.2,
+   "agile_midday_night_ratio": 1.15
+  },
+  {
+   "year": 2023,
+   "mid_mean_gbp_mwh": 93.45,
+   "mid_median_gbp_mwh": 91.35,
+   "mid_daily_spread_median": 72.14,
+   "mid_spread_rel_pct": 77.19,
+   "mid_negative_pct": 2.46,
+   "mid_cheapest_hour": 3,
+   "mid_dearest_hour": 18,
+   "mid_coverage_pct": 99.89,
+   "agile_mean_p_kwh": 21.09,
+   "agile_median_p_kwh": 19.87,
+   "agile_daily_spread_median": 22.47,
+   "agile_spread_rel_pct": 106.56,
+   "agile_negative_pct": 1.23,
+   "agile_cheapest_hour": 3,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 1.01,
+   "mid_midday_night_ratio": 1.2,
+   "agile_midday_night_ratio": 1.22
+  },
+  {
+   "year": 2024,
+   "mid_mean_gbp_mwh": 71.37,
+   "mid_median_gbp_mwh": 73.9,
+   "mid_daily_spread_median": 55.9,
+   "mid_spread_rel_pct": 78.33,
+   "mid_negative_pct": 2.82,
+   "mid_cheapest_hour": 3,
+   "mid_dearest_hour": 18,
+   "mid_coverage_pct": 99.99,
+   "agile_mean_p_kwh": 16.78,
+   "agile_median_p_kwh": 15.79,
+   "agile_daily_spread_median": 23.48,
+   "agile_spread_rel_pct": 139.93,
+   "agile_negative_pct": 1.77,
+   "agile_cheapest_hour": 3,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 1.11,
+   "mid_midday_night_ratio": 1.22,
+   "agile_midday_night_ratio": 1.23
+  },
+  {
+   "year": 2025,
+   "mid_mean_gbp_mwh": 79.89,
+   "mid_median_gbp_mwh": 82.22,
+   "mid_daily_spread_median": 61.27,
+   "mid_spread_rel_pct": 76.7,
+   "mid_negative_pct": 2.79,
+   "mid_cheapest_hour": 3,
+   "mid_dearest_hour": 18,
+   "mid_coverage_pct": 99.94,
+   "agile_mean_p_kwh": 18.51,
+   "agile_median_p_kwh": 17.43,
+   "agile_daily_spread_median": 24.23,
+   "agile_spread_rel_pct": 130.94,
+   "agile_negative_pct": 1.65,
+   "agile_cheapest_hour": 3,
+   "agile_dearest_hour": 18,
+   "agile_coverage_pct": 100.0,
+   "ci_actual_midday_night_ratio": 0.99,
+   "mid_midday_night_ratio": 1.03,
+   "agile_midday_night_ratio": 1.06
+  }
+ ],
+ "fixed_rules": {
+  "flexible_24h_n2": {
+   "fixed_carbon": [
+    "03:00",
+    "03:30"
+   ],
+   "fixed_cost": [
+    "03:30",
+    "04:30"
+   ]
+  },
+  "flexible_24h_n6": {
+   "fixed_carbon": [
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30"
+   ],
+   "fixed_cost": [
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00",
+    "04:30"
+   ]
+  },
+  "flexible_24h_n12": {
+   "fixed_carbon": [
+    "00:00",
+    "00:30",
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00",
+    "04:30",
+    "23:00",
+    "23:30"
+   ],
+   "fixed_cost": [
+    "00:00",
+    "00:30",
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00",
+    "04:30",
+    "05:00",
+    "05:30"
+   ]
+  },
+  "overnight_ev_n2": {
+   "fixed_carbon": [
+    "03:00",
+    "03:30"
+   ],
+   "fixed_cost": [
+    "03:30",
+    "04:30"
+   ]
+  },
+  "overnight_ev_n6": {
+   "fixed_carbon": [
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00"
+   ],
+   "fixed_cost": [
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00",
+    "04:30"
+   ]
+  },
+  "overnight_ev_n12": {
+   "fixed_carbon": [
+    "00:00",
+    "00:30",
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00",
+    "04:30",
+    "23:00",
+    "23:30"
+   ],
+   "fixed_cost": [
+    "00:00",
+    "00:30",
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30",
+    "04:00",
+    "04:30",
+    "05:00",
+    "05:30"
+   ]
+  },
+  "daytime_workplace_n2": {
+   "fixed_carbon": [
+    "12:30",
+    "13:00"
+   ],
+   "fixed_cost": [
+    "13:30",
+    "14:30"
+   ]
+  },
+  "daytime_workplace_n6": {
+   "fixed_carbon": [
+    "11:30",
+    "12:00",
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00"
+   ],
+   "fixed_cost": [
+    "11:30",
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00",
+    "14:30"
+   ]
+  },
+  "daytime_workplace_n12": {
+   "fixed_carbon": [
+    "09:30",
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30",
+    "12:00",
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00",
+    "14:30",
+    "15:00"
+   ],
+   "fixed_cost": [
+    "09:30",
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30",
+    "12:00",
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00",
+    "14:30",
+    "15:00"
+   ]
+  }
+ },
+ "samples": {
+  "flexible_24h_n2": {
+   "n_sessions": 2379,
+   "n_dropped": 157
+  },
+  "flexible_24h_n6": {
+   "n_sessions": 2379,
+   "n_dropped": 157
+  },
+  "flexible_24h_n12": {
+   "n_sessions": 2379,
+   "n_dropped": 157
+  },
+  "overnight_ev_n2": {
+   "n_sessions": 2400,
+   "n_dropped": 136
+  },
+  "overnight_ev_n6": {
+   "n_sessions": 2400,
+   "n_dropped": 136
+  },
+  "overnight_ev_n12": {
+   "n_sessions": 2400,
+   "n_dropped": 136
+  },
+  "daytime_workplace_n2": {
+   "n_sessions": 2473,
+   "n_dropped": 79
+  },
+  "daytime_workplace_n6": {
+   "n_sessions": 2473,
+   "n_dropped": 79
+  },
+  "daytime_workplace_n12": {
+   "n_sessions": 2473,
+   "n_dropped": 79
+  }
+ },
+ "main_flexible24h_n6": [
+  {
+   "year": 2019,
+   "n_sessions": 312,
+   "ci_actual_carbon_fc_red_pct": 21.25,
+   "ci_actual_cost_mid_red_pct": 13.96,
+   "mid_flat": 41.84,
+   "mid_cost_mid_red_pct": 29.03,
+   "mid_carbon_fc_red_pct": 18.73,
+   "mid_fixed_carbon_red_pct": 19.55,
+   "carbon_share_captured_by_cost_mid": 65.71,
+   "cost_share_captured_by_carbon_fc": 64.52,
+   "abate_gbp_t_wholesale": 276.95,
+   "abate_lo": 232.84,
+   "abate_hi": 337.68,
+   "rho_mid_mean": 0.57,
+   "rho_mid_share_pos": 96.15,
+   "overlap_mid_pct": 38.19
+  },
+  {
+   "year": 2020,
+   "n_sessions": 319,
+   "ci_actual_carbon_fc_red_pct": 22.5,
+   "ci_actual_cost_mid_red_pct": 15.64,
+   "mid_flat": 33.56,
+   "mid_cost_mid_red_pct": 46.26,
+   "mid_carbon_fc_red_pct": 28.56,
+   "mid_fixed_carbon_red_pct": 26.38,
+   "carbon_share_captured_by_cost_mid": 69.52,
+   "cost_share_captured_by_carbon_fc": 61.75,
+   "abate_gbp_t_wholesale": 483.39,
+   "abate_lo": 396.6,
+   "abate_hi": 596.73,
+   "rho_mid_mean": 0.56,
+   "rho_mid_share_pos": 96.87,
+   "overlap_mid_pct": 37.51
+  },
+  {
+   "year": 2021,
+   "n_sessions": 329,
+   "ci_actual_carbon_fc_red_pct": 22.02,
+   "ci_actual_cost_mid_red_pct": 14.18,
+   "mid_flat": 116.65,
+   "mid_cost_mid_red_pct": 36.25,
+   "mid_carbon_fc_red_pct": 25.04,
+   "mid_fixed_carbon_red_pct": 23.52,
+   "carbon_share_captured_by_cost_mid": 64.38,
+   "cost_share_captured_by_carbon_fc": 69.08,
+   "abate_gbp_t_wholesale": 884.93,
+   "abate_lo": 753.34,
+   "abate_hi": 1052.91,
+   "rho_mid_mean": 0.55,
+   "rho_mid_share_pos": 96.05,
+   "overlap_mid_pct": 38.35
+  },
+  {
+   "year": 2022,
+   "n_sessions": 352,
+   "ci_actual_carbon_fc_red_pct": 21.11,
+   "ci_actual_cost_mid_red_pct": 12.84,
+   "mid_flat": 197.83,
+   "mid_cost_mid_red_pct": 31.9,
+   "mid_carbon_fc_red_pct": 18.36,
+   "mid_fixed_carbon_red_pct": 19.6,
+   "carbon_share_captured_by_cost_mid": 60.83,
+   "cost_share_captured_by_carbon_fc": 57.56,
+   "abate_gbp_t_wholesale": 1786.5,
+   "abate_lo": 1529.9,
+   "abate_hi": 2110.27,
+   "rho_mid_mean": 0.47,
+   "rho_mid_share_pos": 85.51,
+   "overlap_mid_pct": 34.28
+  },
+  {
+   "year": 2023,
+   "n_sessions": 349,
+   "ci_actual_carbon_fc_red_pct": 24.29,
+   "ci_actual_cost_mid_red_pct": 17.11,
+   "mid_flat": 93.24,
+   "mid_cost_mid_red_pct": 36.83,
+   "mid_carbon_fc_red_pct": 22.42,
+   "mid_fixed_carbon_red_pct": 20.66,
+   "carbon_share_captured_by_cost_mid": 70.46,
+   "cost_share_captured_by_carbon_fc": 60.86,
+   "abate_gbp_t_wholesale": 1235.61,
+   "abate_lo": 1025.09,
+   "abate_hi": 1498.6,
+   "rho_mid_mean": 0.55,
+   "rho_mid_share_pos": 94.27,
+   "overlap_mid_pct": 39.26
+  },
+  {
+   "year": 2024,
+   "n_sessions": 362,
+   "ci_actual_carbon_fc_red_pct": 29.59,
+   "ci_actual_cost_mid_red_pct": 22.19,
+   "mid_flat": 71.54,
+   "mid_cost_mid_red_pct": 37.49,
+   "mid_carbon_fc_red_pct": 23.1,
+   "mid_fixed_carbon_red_pct": 21.56,
+   "carbon_share_captured_by_cost_mid": 74.98,
+   "cost_share_captured_by_carbon_fc": 61.62,
+   "abate_gbp_t_wholesale": 1108.78,
+   "abate_lo": 884.28,
+   "abate_hi": 1388.17,
+   "rho_mid_mean": 0.62,
+   "rho_mid_share_pos": 96.96,
+   "overlap_mid_pct": 39.27
+  },
+  {
+   "year": 2025,
+   "n_sessions": 356,
+   "ci_actual_carbon_fc_red_pct": 30.75,
+   "ci_actual_cost_mid_red_pct": 22.84,
+   "mid_flat": 80.46,
+   "mid_cost_mid_red_pct": 35.28,
+   "mid_carbon_fc_red_pct": 25.9,
+   "mid_fixed_carbon_red_pct": 15.56,
+   "carbon_share_captured_by_cost_mid": 74.28,
+   "cost_share_captured_by_carbon_fc": 73.41,
+   "abate_gbp_t_wholesale": 735.64,
+   "abate_lo": 603.24,
+   "abate_hi": 924.69,
+   "rho_mid_mean": 0.67,
+   "rho_mid_share_pos": 99.16,
+   "overlap_mid_pct": 42.74
+  }
+ ],
+ "household_flexible24h_n2": [
+  {
+   "year": 2019,
+   "agile_flat": 10.64,
+   "agile_cost_agile_red_pct": 40.89,
+   "agile_cost_agile_saving_abs": 4.35,
+   "agile_carbon_fc_red_pct": 27.03,
+   "agile_fixed_carbon_red_pct": 35.4,
+   "agile_share_captured_by_carbon_fc": 66.09,
+   "carbon_share_captured_by_cost_agile": 72.56,
+   "agile_ev_gbp_per_year": 111.13,
+   "agile_ev_gbp_per_year_carbon_fc": 73.44,
+   "abate_gbp_t_agile": 1063.42,
+   "abate_agile_lo": 816.7,
+   "abate_agile_hi": 1398.55,
+   "rho_agile_mean": 0.58,
+   "overlap_agile_pct": 18.75
+  },
+  {
+   "year": 2020,
+   "agile_flat": 8.9,
+   "agile_cost_agile_red_pct": 54.35,
+   "agile_cost_agile_saving_abs": 4.84,
+   "agile_carbon_fc_red_pct": 33.38,
+   "agile_fixed_carbon_red_pct": 44.54,
+   "agile_share_captured_by_carbon_fc": 61.41,
+   "carbon_share_captured_by_cost_agile": 72.16,
+   "agile_ev_gbp_per_year": 123.64,
+   "agile_ev_gbp_per_year_carbon_fc": 75.92,
+   "abate_gbp_t_agile": 1547.13,
+   "abate_agile_lo": 1188.28,
+   "abate_agile_hi": 2002.46,
+   "rho_agile_mean": 0.56,
+   "overlap_agile_pct": 13.79
+  },
+  {
+   "year": 2021,
+   "agile_flat": 22.67,
+   "agile_cost_agile_red_pct": 29.44,
+   "agile_cost_agile_saving_abs": 6.67,
+   "agile_carbon_fc_red_pct": 18.22,
+   "agile_fixed_carbon_red_pct": 22.35,
+   "agile_share_captured_by_carbon_fc": 61.9,
+   "carbon_share_captured_by_cost_agile": 68.0,
+   "agile_ev_gbp_per_year": 170.54,
+   "agile_ev_gbp_per_year_carbon_fc": 105.56,
+   "abate_gbp_t_agile": 1774.18,
+   "abate_agile_lo": 1467.55,
+   "abate_agile_hi": 2197.75,
+   "rho_agile_mean": 0.53,
+   "overlap_agile_pct": 15.81
+  },
+  {
+   "year": 2022,
+   "agile_flat": 35.66,
+   "agile_cost_agile_red_pct": 24.97,
+   "agile_cost_agile_saving_abs": 8.9,
+   "agile_carbon_fc_red_pct": 12.24,
+   "agile_fixed_carbon_red_pct": 16.38,
+   "agile_share_captured_by_carbon_fc": 49.0,
+   "carbon_share_captured_by_cost_agile": 59.21,
+   "agile_ev_gbp_per_year": 227.49,
+   "agile_ev_gbp_per_year_carbon_fc": 111.48,
+   "abate_gbp_t_agile": 2679.79,
+   "abate_agile_lo": 2179.24,
+   "abate_agile_hi": 3356.01,
+   "rho_agile_mean": 0.43,
+   "overlap_agile_pct": 13.21
+  },
+  {
+   "year": 2023,
+   "agile_flat": 21.05,
+   "agile_cost_agile_red_pct": 41.1,
+   "agile_cost_agile_saving_abs": 8.65,
+   "agile_carbon_fc_red_pct": 21.9,
+   "agile_fixed_carbon_red_pct": 28.92,
+   "agile_share_captured_by_carbon_fc": 53.27,
+   "carbon_share_captured_by_cost_agile": 65.43,
+   "agile_ev_gbp_per_year": 221.11,
+   "agile_ev_gbp_per_year_carbon_fc": 117.78,
+   "abate_gbp_t_agile": 2934.16,
+   "abate_agile_lo": 2363.61,
+   "abate_agile_hi": 3773.72,
+   "rho_agile_mean": 0.51,
+   "overlap_agile_pct": 14.04
+  },
+  {
+   "year": 2024,
+   "agile_flat": 16.8,
+   "agile_cost_agile_red_pct": 45.23,
+   "agile_cost_agile_saving_abs": 7.6,
+   "agile_carbon_fc_red_pct": 27.91,
+   "agile_fixed_carbon_red_pct": 32.81,
+   "agile_share_captured_by_carbon_fc": 61.71,
+   "carbon_share_captured_by_cost_agile": 79.54,
+   "agile_ev_gbp_per_year": 194.16,
+   "agile_ev_gbp_per_year_carbon_fc": 119.82,
+   "abate_gbp_t_agile": 3660.77,
+   "abate_agile_lo": 2686.02,
+   "abate_agile_hi": 5360.2,
+   "rho_agile_mean": 0.61,
+   "overlap_agile_pct": 16.02
+  },
+  {
+   "year": 2025,
+   "agile_flat": 18.59,
+   "agile_cost_agile_red_pct": 41.66,
+   "agile_cost_agile_saving_abs": 7.75,
+   "agile_carbon_fc_red_pct": 27.85,
+   "agile_fixed_carbon_red_pct": 26.13,
+   "agile_share_captured_by_carbon_fc": 66.85,
+   "carbon_share_captured_by_cost_agile": 77.17,
+   "agile_ev_gbp_per_year": 197.89,
+   "agile_ev_gbp_per_year_carbon_fc": 132.3,
+   "abate_gbp_t_agile": 2651.07,
+   "abate_agile_lo": 2041.12,
+   "abate_agile_hi": 3495.47,
+   "rho_agile_mean": 0.66,
+   "overlap_agile_pct": 17.7
+  }
+ ],
+ "regions_2025_n2": [
+  {
+   "region": "A",
+   "flat_p_kwh": 19.54,
+   "cheapest_p_kwh": 11.36,
+   "saving_pct": 41.88,
+   "ev_gbp_per_year": 209.1
+  },
+  {
+   "region": "B",
+   "flat_p_kwh": 18.83,
+   "cheapest_p_kwh": 10.82,
+   "saving_pct": 42.54,
+   "ev_gbp_per_year": 204.64
+  },
+  {
+   "region": "C",
+   "flat_p_kwh": 18.57,
+   "cheapest_p_kwh": 10.82,
+   "saving_pct": 41.73,
+   "ev_gbp_per_year": 197.96
+  },
+  {
+   "region": "D",
+   "flat_p_kwh": 20.39,
+   "cheapest_p_kwh": 11.9,
+   "saving_pct": 41.63,
+   "ev_gbp_per_year": 216.88
+  },
+  {
+   "region": "E",
+   "flat_p_kwh": 19.41,
+   "cheapest_p_kwh": 11.36,
+   "saving_pct": 41.49,
+   "ev_gbp_per_year": 205.77
+  },
+  {
+   "region": "F",
+   "flat_p_kwh": 19.41,
+   "cheapest_p_kwh": 11.36,
+   "saving_pct": 41.49,
+   "ev_gbp_per_year": 205.77
+  },
+  {
+   "region": "G",
+   "flat_p_kwh": 19.41,
+   "cheapest_p_kwh": 11.36,
+   "saving_pct": 41.49,
+   "ev_gbp_per_year": 205.77
+  },
+  {
+   "region": "H",
+   "flat_p_kwh": 19.41,
+   "cheapest_p_kwh": 11.36,
+   "saving_pct": 41.49,
+   "ev_gbp_per_year": 205.77
+  },
+  {
+   "region": "J",
+   "flat_p_kwh": 20.26,
+   "cheapest_p_kwh": 11.9,
+   "saving_pct": 41.26,
+   "ev_gbp_per_year": 213.55
+  },
+  {
+   "region": "K",
+   "flat_p_kwh": 20.26,
+   "cheapest_p_kwh": 11.9,
+   "saving_pct": 41.26,
+   "ev_gbp_per_year": 213.55
+  },
+  {
+   "region": "L",
+   "flat_p_kwh": 20.97,
+   "cheapest_p_kwh": 12.44,
+   "saving_pct": 40.68,
+   "ev_gbp_per_year": 217.99
+  },
+  {
+   "region": "M",
+   "flat_p_kwh": 18.7,
+   "cheapest_p_kwh": 10.82,
+   "saving_pct": 42.14,
+   "ev_gbp_per_year": 201.3
+  },
+  {
+   "region": "N",
+   "flat_p_kwh": 19.54,
+   "cheapest_p_kwh": 11.36,
+   "saving_pct": 41.88,
+   "ev_gbp_per_year": 209.1
+  },
+  {
+   "region": "P",
+   "flat_p_kwh": 21.95,
+   "cheapest_p_kwh": 12.98,
+   "saving_pct": 40.85,
+   "ev_gbp_per_year": 229.06
+  }
+ ]
+}

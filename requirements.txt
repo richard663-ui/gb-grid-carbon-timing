@@ -1,6 +1,8 @@
 pandas>=2.0
 numpy
+scipy
 requests
 pyarrow
 statsmodels
 matplotlib
+python-docx  # only for paper/build.py
