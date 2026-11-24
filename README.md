@@ -6,7 +6,7 @@ Working paper and fully reproducible code. Author: Mingyuan Xu (UCL).
 ## Key findings
 - GB average carbon intensity fell 40% (214 → 129 gCO₂/kWh, 2019 → 2025), but the daily max–min spread stayed at about 90–100 g, so timing matters relatively more (spread/mean 48% → 73%).
 - In 2025 midday was on average as clean as the night for the first time (midday/night ratio 0.99), and wholesale power at midday was within 3% of the night price (22% in 2019).
-- For fully flexible demand, a forecast-based schedule cut intensity by 21% (2019) and 31% (2025) compared with flat use. A fixed 01:00–03:30 rule frozen on 2019–21 data captured only 40% of that by 2025 (out of sample).
+- For fully flexible demand, a forecast-based schedule cut intensity by 21% (2019) and 31% (2025) compared with flat use. A fixed 01:00–03:30 rule frozen on 2019–21 data captured 61–63% of that saving in sample, but only 37–56% out of sample (2022–25; 40% in 2025).
 - Cheap and clean mostly coincide: choosing the cheapest wholesale slots captured 61–75% of the carbon saving while cutting wholesale energy cost by 29–46%.
 - On the Agile dynamic tariff, an illustrative EV charging 7 kWh a day saved about £198 in 2025 by charging in the cheapest hour (£198–£229 across the 14 GB regions). On a flat tariff the saving is zero.
 - Going beyond what prices reward is expensive: the implied abatement cost of the carbon-aware schedule over the cheapest one is £277–£1,787 per tCO₂, far above the carbon price.
