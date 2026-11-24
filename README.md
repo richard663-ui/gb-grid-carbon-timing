@@ -1,5 +1,7 @@
 # When is the cleanest, and the cheapest, time to use electricity?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24515213.svg)](https://doi.org/10.5281/zenodo.24515213)
+
 Carbon intensity, prices and load shifting on the GB grid, 2019–2025.
 Working paper and fully reproducible code. Author: Mingyuan Xu (UCL).
 
@@ -29,3 +31,8 @@ cd ../paper && python build.py working_paper.md           # optional: rebuild DO
 - `paper/` – working paper (Markdown / DOCX / PDF), Chinese summary and figures
 
 Data: NESO Carbon Intensity API, Elexon Insights (FUELHH, MID) and the Octopus Energy public API. Code: MIT licence.
+
+## Cite
+Xu, M. (2026). *When is the cleanest, and the cheapest, time to use electricity? Carbon intensity, prices and load shifting on the GB grid, 2019–2025* (working paper, draft v0.3). Zenodo. https://doi.org/10.5281/zenodo.24515213
+
+The DOI above always points to the latest version; v0.3.0 itself is https://doi.org/10.5281/zenodo.24515214. GitHub's "Cite this repository" button uses `CITATION.cff`.

@@ -10,6 +10,14 @@ version: 0.3.0
 date-released: 2026-11-24
 license: MIT
 repository-code: "https://github.com/richard663-ui/gb-grid-carbon-timing"
+doi: 10.5281/zenodo.24515213
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24515213
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: 10.5281/zenodo.24515214
+    description: "Version v0.3.0"
 keywords:
   - carbon intensity
   - electricity prices
@@ -28,4 +36,5 @@ preferred-citation:
   year: 2026
   month: 11
   notes: "Working paper, draft v0.3"
+  doi: 10.5281/zenodo.24515213
   url: "https://github.com/richard663-ui/gb-grid-carbon-timing"

@@ -1,7 +1,7 @@
 ---
 title: "When is the cleanest, and the cheapest, time to use electricity? Carbon intensity, prices and load shifting on the GB grid, 2019–2025"
 author: "Mingyuan Xu (University College London)"
-date: "Working paper, draft v0.3, November 2026"
+date: "Working paper, draft v0.3, November 2026. DOI: 10.5281/zenodo.24515213"
 ---
 
 **Abstract.** Advice and tariffs in Great Britain usually treat the night as the cleanest and cheapest time to use electricity. This study tests whether that is still true, and whether the cleanest and the cheapest times coincide. It uses public half-hourly data for 2019–2025: NESO carbon intensity, Elexon generation and wholesale prices, and Octopus Agile household prices. Average carbon intensity fell by 40% (from 214 to 129 gCO₂/kWh), but the daily range between the cleanest and dirtiest times stayed near 90–100 g, so timing now matters relatively more. In 2025, for the first time, midday was on average as clean as the night (midday-to-night ratio 0.99, down from 1.14 in 2019), and wholesale power at midday was within 3% of the night price (1.03, down from 1.22). I simulate flexible demand under several scheduling strategies. A strategy that uses only the public carbon forecast cut intensity by 21% in 2019 and 31% in 2025, compared with spreading use evenly over the day. A fixed 01:00–03:30 rule chosen on 2019–2021 data achieved only 8–17% out of sample. Price and carbon mostly point the same way: their mean within-day rank correlation was 0.47–0.67, and choosing the cheapest wholesale slots captured 61–75% of the carbon saving while cutting wholesale energy cost by 29–46%. For an illustrative electric car charging 7 kWh a day on a dynamic tariff, choosing the cheapest hour saved about £110–£230 a year (£198 in 2025). A flat tariff rewards no shifting at all. The remaining carbon saving is expensive: moving from the cheapest schedule to the carbon-aware one implies £277–£1,787 per tonne of CO₂, far above the carbon price paid by generators. A simple marginal-emissions model still favours the night, so the "best time" depends on how emissions are counted.
@@ -231,7 +231,7 @@ For policy and product design this suggests three things. Time-of-use tariffs an
 
 ## 7. Reproducibility
 
-All code and processed outputs are public at <https://github.com/richard663-ui/gb-grid-carbon-timing>. `python src/fetch_data.py` and `python src/fetch_prices.py` download the raw data (a few minutes). `python src/analysis.py` reproduces the carbon tables and figures, and `python src/cost_analysis.py` reproduces the cost tables and figures. The random seeds are fixed.
+All code and processed outputs are public at <https://github.com/richard663-ui/gb-grid-carbon-timing> and archived on Zenodo (<https://doi.org/10.5281/zenodo.24515213>). `python src/fetch_data.py` and `python src/fetch_prices.py` download the raw data (a few minutes). `python src/analysis.py` reproduces the carbon tables and figures, and `python src/cost_analysis.py` reproduces the cost tables and figures. The random seeds are fixed.
 
 ## References
 
