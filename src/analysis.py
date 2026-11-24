@@ -25,10 +25,15 @@ YEARS = list(range(2019, 2026))  # full calendar years with generation-mix data
 RNG = np.random.default_rng(42)
 
 # Direct-combustion emission factors (gCO2/kWh) as used in the NESO Carbon Intensity
-# methodology (Bruce et al., 2017). Interconnectors and pumped storage are treated as
-# zero-emission at the GB boundary (domestic-emissions perspective).
+# methodology (Bruce et al., 2024, Table 1). Main specification: interconnectors and
+# pumped storage are zero-emission at the GB boundary (domestic-emissions perspective).
 EF = {"mw_COAL": 937, "mw_CCGT": 394, "mw_OCGT": 651, "mw_OIL": 935,
       "mw_BIOMASS": 120, "mw_OTHER": 300}
+# Robustness: imports (positive flows only) charged at the NESO default factors for the
+# connected system (France ~53, Netherlands ~474, Belgium ~179, Ireland ~458). Norway (NSL)
+# and Denmark (Viking) are not in the NESO table and are left at zero.
+EF_IMPORT = {"mw_INTFR": 53, "mw_INTIFA2": 53, "mw_INTELEC": 53, "mw_INTNED": 474,
+             "mw_INTNEM": 179, "mw_INTIRL": 458, "mw_INTEW": 458, "mw_INTGRNL": 458}
 
 
 # ----------------------------------------------------------------------------- data
@@ -48,6 +53,8 @@ def load() -> pd.DataFrame:
     df[mw] = df[mw].fillna(0)
     # tCO2 per half hour: MW * 1000 (kW) * g/kWh = g/h ; /1e6 -> t/h ; *0.5 h
     df["emis_t"] = sum(df[c].clip(lower=0) * f for c, f in EF.items()) * 1000 / 1e6 * 0.5
+    df["emis_imp_t"] = df.emis_t + sum(df[c].clip(lower=0) * f for c, f in EF_IMPORT.items()
+                                       if c in df) * 1000 / 1e6 * 0.5
     df["supply_mw"] = df[mw].sum(axis=1)  # domestic gen + net imports + net storage
     return df[df.year.between(2018, 2025)].reset_index(drop=True)
 
@@ -103,11 +110,12 @@ def drivers(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # ------------------------------------------------ 3. marginal emission factors (MEF)
-def mef(df: pd.DataFrame, n_boot: int = 300) -> pd.DataFrame:
+def mef(df: pd.DataFrame, n_boot: int = 300, col: str = "emis_t",
+        tag: str = "") -> pd.DataFrame:
     """Hawkes (2010) style: regress change in GB fossil emissions on change in total
     supply between consecutive half hours. Estimated by year and 4-hour block."""
     d = df.sort_values("time").copy()
-    d["dE"] = d.emis_t.diff() * 2  # tCO2/h
+    d["dE"] = d[col].diff() * 2  # tCO2/h
     d["dD"] = d.supply_mw.diff()   # MW
     gap = d.time.diff() != pd.Timedelta("30min")
     d.loc[gap, ["dE", "dD"]] = np.nan
@@ -128,7 +136,7 @@ def mef(df: pd.DataFrame, n_boot: int = 300) -> pd.DataFrame:
         x, yv = g.dD.values, g.dE.values
         yr.append({"year": y, "mef_all": (x @ yv) / (x @ x) * 1000})
     out = out.merge(pd.DataFrame(yr), on="year")
-    out.round(1).to_csv(RES / "table3_mef.csv", index=False)
+    out.round(1).to_csv(RES / f"table3_mef{tag}.csv", index=False)
     return out
 
 
@@ -154,7 +162,8 @@ def _window_frame(df: pd.DataFrame, start: int, end: int) -> pd.DataFrame:
     return d
 
 
-def shifting(df: pd.DataFrame, mef_tab: pd.DataFrame, n_slots: int = 6) -> tuple[pd.DataFrame, dict]:
+def shifting(df: pd.DataFrame, mef_tab: pd.DataFrame, n_slots: int = 6,
+             tag: str = "") -> tuple[pd.DataFrame, dict]:
     """n_slots half-hours (3 h, e.g. ~21 kWh at 7 kW) of flexible demand per session.
 
     Strategies
@@ -198,7 +207,7 @@ def shifting(df: pd.DataFrame, mef_tab: pd.DataFrame, n_slots: int = 6) -> tuple
             recs.append(rec)
         r = pd.DataFrame(recs)
         r = r[r.year.isin(YEARS)]
-        r.to_csv(RES / f"sessions_{name}.csv", index=False)
+        r.to_csv(RES / f"sessions_{name}{tag}.csv", index=False)
         for y, g in r.groupby("year"):
             row = {"window": name, "year": y, "n_sessions": len(g)}
             for k in ["dumb", "fixed", "forecast", "oracle"]:
@@ -219,7 +228,7 @@ def shifting(df: pd.DataFrame, mef_tab: pd.DataFrame, n_slots: int = 6) -> tuple
             row["gain_lo"], row["gain_hi"] = np.percentile(bs, [2.5, 97.5])
             results.append(row)
     out = pd.DataFrame(results)
-    out.round(2).to_csv(RES / "table4_shifting.csv", index=False)
+    out.round(2).to_csv(RES / f"table4_shifting{tag}.csv", index=False)
     return out, details
 
 
@@ -275,6 +284,8 @@ def main() -> None:
     dr = drivers(df)
     mf = mef(df)
     sh, det = shifting(df, mf)
+    mf_imp = mef(df, col="emis_imp_t", tag="_with_imports")
+    sh_imp, _ = shifting(df, mf_imp, tag="_with_imports")
     fig_drivers(tr, mf)
     fig_shifting(sh)
     summary = {
@@ -284,6 +295,8 @@ def main() -> None:
         "trends": tr.round(2).reset_index().to_dict("records"),
         "drivers": dr.round(3).to_dict("records"),
         "mef_year": mf.drop_duplicates("year")[["year", "mef_all"]].round(1).to_dict("records"),
+        "mef_year_with_imports": mf_imp.drop_duplicates("year")[["year", "mef_all"]]
+        .round(1).to_dict("records"),
         "shifting": sh.round(2).to_dict("records"),
         "fixed_schedule": det,
     }
@@ -300,6 +313,11 @@ def main() -> None:
             "gain_lo", "gain_hi"]
     print(sh[cols].round(1).to_string())
     print(det, "forecast MAE", summary["forecast_mae"])
+    print("WITH IMPORTS")
+    print(mf_imp.pivot(index="year", columns="block", values="mef").round(0).to_string())
+    print(mf_imp.drop_duplicates("year")[["year", "mef_all"]].round(0).to_string())
+    print(sh_imp[sh_imp.window == "flexible_24h"][["year", "vsflat_mef_fixed_pct",
+          "vsflat_mef_forecast_pct", "vsflat_mef_oracle_pct"]].round(1).to_string())
 
 
 if __name__ == "__main__":

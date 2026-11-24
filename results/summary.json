@@ -298,6 +298,36 @@
    "mef_all": 219.5
   }
  ],
+ "mef_year_with_imports": [
+  {
+   "year": 2019,
+   "mef_all": 272.2
+  },
+  {
+   "year": 2020,
+   "mef_all": 269.9
+  },
+  {
+   "year": 2021,
+   "mef_all": 256.3
+  },
+  {
+   "year": 2022,
+   "mef_all": 225.8
+  },
+  {
+   "year": 2023,
+   "mef_all": 224.2
+  },
+  {
+   "year": 2024,
+   "mef_all": 224.9
+  },
+  {
+   "year": 2025,
+   "mef_all": 235.8
+  }
+ ],
  "shifting": [
   {
    "window": "overnight_ev",

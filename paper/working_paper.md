@@ -1,12 +1,12 @@
 ---
-title: "Is overnight still the low-carbon time to use electricity? Wind, solar and the value of carbon-aware load shifting on the GB grid, 2019–2025"
+title: "When is the cleanest time to use electricity? Daily carbon-intensity patterns and carbon-aware load shifting on the GB grid, 2019–2025"
 author: "Mingyuan Xu (University College London)"
-date: "Working paper, draft v0.1, November 2026"
+date: "Working paper, draft v0.2, November 2026"
 ---
 
 **Abstract.** Smart-charging tariffs and household advice in Great Britain usually treat the night as the low-carbon time to use electricity. This study tests whether that rule still holds as the grid decarbonises. Using 2019–2025 half-hourly public data from the NESO Carbon Intensity API and Elexon (about 120,000 half hours), I measure how the daily carbon-intensity profile has changed. I then simulate three-hour blocks of flexible demand, such as electric-vehicle charging, under four scheduling strategies. A fixed overnight schedule (01:00–03:30) is chosen on 2019–2021 data, frozen, and tested out of sample on 2022–2025. It is compared with a strategy that uses only the published day-ahead forecast, and with a perfect-foresight upper bound. Average grid intensity fell by 40% (214 to 129 gCO₂/kWh), and the share of half hours below 100 g rose from 2% to 37%. The absolute within-day spread stayed close to 90–100 g, so its size relative to the mean rose from 48% to 73%. In 2025, for the first time, the cleanest hour on average was midday (12:00) rather than night. For fully flexible demand, the forecast-based strategy cut average intensity by 21% in 2019 and 31% in 2025, relative to flat use. The frozen overnight rule stayed at 8–17%, so its share of the achievable saving fell from about 63% to 40%. Half of the slots the forecast strategy chose in 2025 were daytime slots. A cruder marginal-emissions estimate, however, still favours the night. This shows that the "best time" depends on the accounting metric, and that question deserves better marginal-emissions data.
 
-**Keywords:** carbon intensity; demand flexibility; electric vehicles; marginal emissions; Great Britain; solar.
+**Keywords:** carbon intensity; demand flexibility; electric vehicles; marginal emissions; Great Britain; wind; solar; nuclear.
 
 ## 1. Introduction
 
@@ -18,7 +18,11 @@ This rule was formed when night demand was low and solar output small. As wind a
 2. **RQ2.** How much carbon intensity can flexible demand avoid by moving in time, and how is that changing?
 3. **RQ3.** Does a fixed clock rule, set on past data and then left unchanged, keep pace with a strategy that reacts to the published forecast?
 
-The contribution is deliberately modest. I do not propose a new estimation method. Instead I (i) bring the evidence up to date to the end of 2025 using only public data, (ii) test a fixed rule *out of sample*, which mirrors how such rules are used in practice, and (iii) show that the conclusion can flip when average emission factors are swapped for marginal ones. All code is public, and the full analysis can be re-run with two commands.
+### 1.1 Related work
+
+Two GB studies are closest to this paper. Tang et al. (2021) combine hourly marginal emission factors with a life-cycle assessment of home EV charging. They find that marginal factors give 25% higher emissions than average ones, and that smart charging cuts emissions by up to about 6% for typical overnight charging patterns. Mehlig et al. (2022) pair national EV charging data with high-resolution generation data. They find that smart charging lowers *average* CO₂ emissions by about 10% but may *raise* marginal emissions. They therefore argue for 24-hour opportunistic charging that targets marginal emissions. Both studies use data up to 2019–2020. The marginal-emission method itself follows Hawkes (2010) for GB and Siler-Evans et al. (2012) for the US, and the long-run drivers of GB decarbonisation are reviewed by Staffell (2017).
+
+The contribution of this paper is deliberately modest. I do not propose a new estimation method. Instead I (i) bring the evidence up to date to the end of 2025 using only public data, (ii) test a fixed rule *out of sample*, which mirrors how such rules are used in practice, and (iii) show that the conclusion can flip when average emission factors are swapped for marginal ones. All code is public, and the full analysis can be re-run with two commands.
 
 ## 2. Data
 
@@ -28,7 +32,7 @@ The contribution is deliberately modest. I do not propose a new estimation metho
 | NESO Carbon Intensity API (generation) | Generation mix (%) by fuel | 30 min | 2019–2025 |
 | Elexon Insights, FUELHH | Transmission-metered generation by fuel (MW), interconnector flows | 30 min | 2019–2025 |
 
-The national intensity series covers the whole GB system, including an estimate of embedded wind and solar. The Elexon series covers transmission-connected generation only, and is used solely for the marginal-emissions robustness check (Section 3.3). Forecast values above 1,000 g or at or below 0 g (fewer than 0.1% of records) were treated as missing as data artefacts. The mean absolute error of the forecast against the actual value over the period is 11.5 gCO₂/kWh. Times are converted to UK local time, so "02:00" means 02:00 on the household's clock in both GMT and BST.
+The national intensity series covers the whole GB system: gas, coal, oil, biomass, nuclear, hydro, wind, solar, pumped storage and imports, including an estimate of embedded wind and solar. Nuclear provided 17% of generation on average over the period. Because nuclear output is close to constant over a day, it lowers the *level* of carbon intensity but hardly changes its *daily shape*. That is why the analysis focuses on wind and solar when explaining timing, while every source is counted in the intensity figures. The Elexon series covers transmission-connected generation only, and is used solely for the marginal-emissions robustness check (Section 3.3). Forecast values above 1,000 g or at or below 0 g (fewer than 0.1% of records) were treated as missing as data artefacts. The mean absolute error of the forecast against the actual value over the period is 11.5 gCO₂/kWh. Times are converted to UK local time, so "02:00" means 02:00 on the household's clock in both GMT and BST.
 
 ## 3. Methods
 
@@ -51,7 +55,7 @@ Choosing the fixed rule on one period and scoring it on a later one is the same 
 
 ### 3.3 Robustness: marginal emission factors
 
-Average intensity tells us the emissions *share* of a kWh. The emissions *caused* by an extra kWh depend on which plant responds, which is the marginal emission factor (MEF). Following Hawkes (2010) and Siler-Evans et al. (2012), I regress the change in GB fossil CO₂ emissions between consecutive half hours on the change in total supply. I do this by year and by four-hour block, using direct-combustion factors from the NESO methodology (coal 937, CCGT 394, OCGT 651, oil 935, biomass 120, other 300 gCO₂/kWh; Bruce et al., 2017). Interconnectors and pumped storage are treated as zero-emission at the GB boundary. Confidence intervals come from 300 bootstrap resamples. This estimate is intentionally simple, and its limits are discussed in Section 6.
+Average intensity tells us the emissions *share* of a kWh. The emissions *caused* by an extra kWh depend on which plant responds, which is the marginal emission factor (MEF). Following Hawkes (2010) and Siler-Evans et al. (2012), I regress the change in GB fossil CO₂ emissions between consecutive half hours on the change in total supply. I do this by year and by four-hour block, using direct-combustion factors from the NESO methodology (coal 937, CCGT 394, OCGT 651, oil 935, biomass 120, other 300 gCO₂/kWh; Bruce et al., 2024). In the main specification, interconnectors and pumped storage are treated as zero-emission at the GB boundary. In a second specification, positive import flows are charged at NESO's default factors for the connected system (France 53, Netherlands 474, Belgium 179, Ireland 458 gCO₂/kWh). Norway and Denmark are not listed in that table and are left at zero. Confidence intervals come from 300 bootstrap resamples. This estimate is intentionally simple, and its limits are discussed in Section 6.
 
 ## 4. Results
 
@@ -93,7 +97,7 @@ Figure 3 and Table 2 show the reduction in intensity compared with flat use. Wit
 
 \* Out-of-sample years for the fixed rule.
 
-![Intensity reduction compared with flat use by strategy and window. The shaded years are the period used to choose the fixed rule.](fig3_shifting_savings.png)
+![Intensity reduction compared with flat use by strategy and window. The shaded years are the period used to choose the fixed rule.](fig3_shifting_savings.png){width=100%}
 
 The forecast-based strategy reaches 87–92% of the perfect-foresight bound in every year. Day-ahead forecasts are therefore good enough to capture nearly all of the available saving.
 
@@ -107,7 +111,7 @@ For fully flexible demand the picture is different. The fixed rule's share of th
 
 ### 4.4 Robustness: the metric matters
 
-The marginal-emissions estimate does **not** agree. By this measure the 00:00–04:00 block has the *lowest* marginal factor in every year from 2023 (about 95 g/kWh, compared with 140–190 g at midday and 250–290 g in the evening). Scored on marginal factors, the fixed overnight rule beats the forecast-based strategy in the fully flexible window (for example 52% compared with 11% below flat use in 2025). The obvious interpretation is that changes in demand at night are increasingly met by imports and storage, which this simple model counts as zero at the GB boundary, while at midday they are met by GB gas plant. This is the well-known gap between average and marginal accounting (Siler-Evans et al., 2012), and it is unresolved here. Average intensity is the metric that consumer apps and the NESO API actually publish. The marginal result means that claims about "green hours" should state which metric they use.
+The marginal-emissions estimate does **not** agree. By this measure the 00:00–04:00 block has the *lowest* marginal factor in every year from 2023 (about 95 g/kWh, compared with 140–190 g at midday and 250–290 g in the evening). Scored on marginal factors, the fixed overnight rule beats the forecast-based strategy in the fully flexible window (for example 52% compared with 11% below flat use in 2025). The obvious interpretation is that changes in demand at night are increasingly met by imports and storage, which this simple model counts as zero at the GB boundary, while at midday they are met by GB gas plant. Charging imports at NESO's default factors raises the night-time marginal factor (to about 120–130 g/kWh in 2023–2025) but does not change the ranking: the fixed overnight rule still beats the forecast-based strategy on marginal factors (41% compared with 9% below flat use in 2025). This matches Mehlig et al. (2022), who also found that smart charging which lowers average emissions can raise marginal ones. The gap between average and marginal accounting (Siler-Evans et al., 2012) is therefore a real feature of the GB system and not an artefact of one modelling choice, but it is not resolved here. Average intensity is the metric that consumer apps and the NESO API actually publish. The marginal result means that claims about "green hours" should state which metric they use.
 
 ![Average and marginal emission factors, and the median daily spread, by year.](fig2_aef_mef_spread.png)
 
@@ -115,11 +119,13 @@ The marginal-emissions estimate does **not** agree. By this measure the 00:00–
 
 The evidence supports three conclusions. First, decarbonisation has not removed the reason to shift demand. It has made shifting *more* valuable in proportion, because the absolute daily spread has stayed roughly constant while the mean has fallen. Second, the cleanest time of day is moving towards midday as solar grows, so rules fixed on past data are losing value, while simple forecast-based scheduling keeps up. Third, both conclusions rest on average emission factors. Under a basic marginal-emissions view, the night still looks best, and a better MEF model is needed before strong policy claims can be made.
 
+Compared with earlier GB work, the savings found here are larger than the roughly 6% reported by Tang et al. (2021) for overnight smart charging. This is mainly because the fully flexible case lets demand move across the whole day, and because the 2023–2025 grid has much deeper daily troughs. The average-versus-marginal tension that Mehlig et al. (2022) identified using 2019 data still holds in 2025.
+
 For policy and product design this suggests that time-of-use tariffs and smart-charging defaults should be reviewed regularly, or should follow the carbon forecast directly, instead of fixing "green hours" once. It also suggests that workplace and daytime charging deserves more attention as solar grows.
 
 ## 6. Limitations and further work
 
-* **Average versus marginal.** The MEF model is a single-equation, domestic-boundary approximation. It ignores emissions behind interconnectors and the embedded generation that Elexon data does not meter. A natural extension is to give imports country-specific factors and to estimate MEFs by load level, not only by time of day.
+* **Average versus marginal.** The MEF model is a single-equation approximation. Imports are charged only at fixed default factors, and embedded generation that Elexon does not meter is missing. A natural extension is to use time-varying import factors from ENTSO-E and to estimate MEFs by load level, not only by time of day.
 * **No system feedback.** The experiment treats each user as small. If millions of users shift at once, they will create new peaks and change the marginal plant.
 * **Behaviour.** A three-hour daily need and fixed windows are stylised assumptions. Real charging sessions vary.
 * **Forecast vintage.** The API reports a single forecast per half hour. The exact lead time of that forecast is not recorded in the archive, so the forecast-based results may be slightly optimistic compared with a true day-ahead decision.
@@ -131,11 +137,11 @@ All code and processed outputs are public at `github.com/richard663-ui/gb-grid-c
 
 ## References
 
-*(Verify every entry against the original source before submission.)*
-
-* Bruce, A., Ruff, L., Kelloway, J., MacMillan, F. and Rogers, A. (2017). *Carbon Intensity Forecast Methodology.* National Grid ESO / Environmental Defense Fund Europe / University of Oxford / WWF.
+* Bruce, A. R. W., Ruff, L., Kelloway, J., MacMillan, F. and Rogers, A. (2024). *Carbon Intensity Regional Forecast Methodology.* National Energy System Operator (NESO), with Environmental Defense Fund Europe, WWF and the University of Oxford.
 * Hawkes, A. D. (2010). Estimating marginal CO₂ emissions rates for national electricity systems. *Energy Policy*, 38(10), 5977–5987.
+* Mehlig, D., ApSimon, H. and Staffell, I. (2022). Emissions from charging electric vehicles in the UK. *Transportation Research Part D: Transport and Environment*, 110, 103430. https://doi.org/10.1016/j.trd.2022.103430
 * Siler-Evans, K., Azevedo, I. L. and Morgan, M. G. (2012). Marginal emissions factors for the U.S. electricity system. *Environmental Science & Technology*, 46(9), 4742–4748.
 * Staffell, I. (2017). Measuring the progress and impacts of decarbonising British electricity. *Energy Policy*, 102, 463–475.
-* NESO Carbon Intensity API, https://carbonintensity.org.uk (accessed November 2026).
-* Elexon Insights Solution, FUELHH dataset, https://bmrs.elexon.co.uk (accessed November 2026).
+* Tang, Y., Cockerill, T. T., Pimm, A. J. and Yuan, X. (2021). Reducing the life cycle environmental impact of electric vehicles through emissions-responsive charging. *iScience*, 24(12), 103499. https://doi.org/10.1016/j.isci.2021.103499
+* NESO Carbon Intensity API, https://carbonintensity.org.uk (data accessed November 2026).
+* Elexon Insights Solution, FUELHH dataset, https://bmrs.elexon.co.uk (data accessed November 2026).

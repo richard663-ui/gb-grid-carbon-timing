@@ -1,13 +1,13 @@
-# Is overnight still the low-carbon time to use electricity?
+# When is the cleanest time to use electricity?
 
-Wind, solar and the value of carbon-aware load shifting on the GB grid, 2019–2025.
+Daily carbon-intensity patterns and carbon-aware load shifting on the GB grid, 2019–2025.
 Working paper and fully reproducible code. Author: Mingyuan Xu (UCL).
 
 ## Key findings
 - GB average carbon intensity fell 40% (214 → 129 gCO₂/kWh, 2019 → 2025), but the daily max–min spread stayed ~90–100 g, so timing matters relatively more (spread/mean 48% → 73%).
 - In 2025 the cleanest hour on average was midday, not night, for the first time.
 - For fully flexible demand, a forecast-based schedule cut intensity 21% (2019) → 31% (2025) vs flat use; a fixed 01:00–03:30 rule frozen on 2019–21 data captured only 40% of that by 2025 (out-of-sample).
-- A simple marginal-emissions model still favours the night: the "best time" depends on the accounting metric.
+- A marginal-emissions model (with or without imports) still favours the night, matching Mehlig et al. (2022): the "best time" depends on the accounting metric.
 
 ## Reproduce
 ```bash
