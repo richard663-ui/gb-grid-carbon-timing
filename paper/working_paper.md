@@ -231,7 +231,7 @@ For policy and product design this suggests three things. Time-of-use tariffs an
 
 ## 7. Reproducibility
 
-All code and processed outputs are public at `github.com/richard663-ui/gb-grid-carbon-timing` (repository to be published). `python src/fetch_data.py` and `python src/fetch_prices.py` download the raw data (a few minutes). `python src/analysis.py` reproduces the carbon tables and figures, and `python src/cost_analysis.py` reproduces the cost tables and figures. The random seeds are fixed.
+All code and processed outputs are public at <https://github.com/richard663-ui/gb-grid-carbon-timing>. `python src/fetch_data.py` and `python src/fetch_prices.py` download the raw data (a few minutes). `python src/analysis.py` reproduces the carbon tables and figures, and `python src/cost_analysis.py` reproduces the cost tables and figures. The random seeds are fixed.
 
 ## References
 
