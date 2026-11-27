@@ -9,9 +9,12 @@ Sources (both public, no key needed):
     https://api.octopus.energy/v1/products/
 
 Run:  python src/fetch_prices.py   (writes data/raw/mid.parquet, data/raw/agile_*.parquet)
+      python src/fetch_prices.py --start 2026-01-01 --end 2026-11-01 --suffix _2026
+          (out-of-period check: MID and London Agile only, see check_2026.py)
 """
 from __future__ import annotations
 
+import argparse
 import datetime as dt
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -54,10 +57,10 @@ def _get(url: str, params: dict | None = None, tries: int = 6) -> dict:
     raise RuntimeError(f"failed: {url} {params}")
 
 
-def fetch_mid() -> pd.DataFrame:
-    spans, t = [], START
-    while t < END:
-        spans.append((t, min(t + dt.timedelta(days=6), END)))
+def fetch_mid(start: dt.datetime = START, end: dt.datetime = END) -> pd.DataFrame:
+    spans, t = [], start
+    while t < end:
+        spans.append((t, min(t + dt.timedelta(days=6), end)))
         t += dt.timedelta(days=6)
 
     def one(span):
@@ -109,8 +112,31 @@ def fetch_agile(regions: list[str], start: str = "2018-12-31T00:00:00Z",
             .reset_index(drop=True))
 
 
+def fetch_extension(start: str, end: str, suffix: str) -> None:
+    """Prices for a later period (MID and London Agile only), saved with a suffix.
+    From 1 October 2026 the Agile API's value_inc_vat equals value_exc_vat, so compare
+    Agile levels across that date with care (check_2026.py uses only within-day ratios)."""
+    a = dt.datetime.fromisoformat(start).replace(tzinfo=dt.timezone.utc) - dt.timedelta(days=1)
+    b = dt.datetime.fromisoformat(end).replace(tzinfo=dt.timezone.utc) + dt.timedelta(days=1)
+    mid = fetch_mid(a, b)
+    mid.to_parquet(RAW / f"mid{suffix}.parquet", index=False)
+    print(f"mid{suffix}: {len(mid):,} rows {mid.time.min()} -> {mid.time.max()}")
+    ag = fetch_agile(["C"], start=a.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                     end=b.strftime("%Y-%m-%dT%H:%M:%SZ"))
+    ag.to_parquet(RAW / f"agile_C{suffix}.parquet", index=False)
+    print(f"agile_C{suffix}: {len(ag):,} rows {ag.time.min()} -> {ag.time.max()}")
+
+
 if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--start", help="later-period start date (YYYY-MM-DD)")
+    ap.add_argument("--end", help="later-period end date, exclusive (YYYY-MM-DD)")
+    ap.add_argument("--suffix", default="_ext")
+    args = ap.parse_args()
     RAW.mkdir(parents=True, exist_ok=True)
+    if args.start:
+        fetch_extension(args.start, args.end, args.suffix)
+        raise SystemExit
     t0 = time.time()
     mid = fetch_mid()
     mid.to_parquet(RAW / "mid.parquet", index=False)
