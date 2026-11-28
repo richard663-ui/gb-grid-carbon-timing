@@ -48,4 +48,4 @@ Data: NESO Carbon Intensity API, Elexon Insights (FUELHH, MID) and the Octopus E
 ## Cite
 Xu, M. (2026). *When is the cleanest, and the cheapest, time to use electricity? Carbon intensity, prices, load shifting and storage on the GB grid, 2019–2025* (working paper, version 1.0). Zenodo. https://doi.org/10.5281/zenodo.24515213
 
-The DOI above always points to the latest version; the earlier v0.3.0 is https://doi.org/10.5281/zenodo.24515214. GitHub's "Cite this repository" button uses `CITATION.cff`.
+The DOI above always points to the latest version; v1.0.0 itself is https://doi.org/10.5281/zenodo.24613153 and the earlier v0.3.0 is https://doi.org/10.5281/zenodo.24515214. GitHub's "Cite this repository" button uses `CITATION.cff`.
